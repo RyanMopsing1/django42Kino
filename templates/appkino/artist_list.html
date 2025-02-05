@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+	<h2>Каталог Кино</h2>
+    <ul>
+    {% for one in kino_list %}
+        <li>
+            <a href="{% url one.get_absolute_url %}">
+                <p>Фильм {{ one.title }}</p>
+            </a>
+            <p>Режиссер {{ one.director }}</p>
+        </li>
+    {% endfor  %}
+    </ul>
+{% endblock %}

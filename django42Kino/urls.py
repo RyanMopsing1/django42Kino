@@ -21,4 +21,8 @@ from appkino import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('kino/', views.kinoList.as_view(), name='allkino'),
+    path('artist/', views.artistList.as_view(), name='allartist'),
+    path('kino/<str:title>/<int:pk>/', views.kinoDetail.as_view(), name='oneKino'),
+
 ]

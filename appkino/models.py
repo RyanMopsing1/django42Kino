@@ -16,7 +16,7 @@ class Country(models.Model):
 class Artist(models.Model):
     name = models.CharField(max_length=100, verbose_name='Имя')
     info = models.TextField(verbose_name='Информация', blank=True, null=True)
-    foto = models.FileField(verbose_name='Фото', upload_to='appkino/static/artist/', null=True, blank=True)
+    foto = models.FileField(verbose_name='Фото', upload_to='artist/', null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -24,7 +24,7 @@ class Artist(models.Model):
 class Director(models.Model):
     name = models.CharField(max_length=100, verbose_name='Имя')
     info = models.TextField(verbose_name='Информация', blank=True, null=True)
-    foto = models.FileField(verbose_name='Фото', upload_to='appkino/static/foto/', null=True, blank=True)
+    foto = models.FileField(verbose_name='Фото', upload_to='director/', null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -44,10 +44,13 @@ class Kino(models.Model):
     artist = models.ManyToManyField(Artist)
     info = models.TextField( verbose_name='Информация', blank=True, null=True)
     year = models.IntegerField(verbose_name='Год')
-    poster = models.FileField(verbose_name='Постер', upload_to='appkino/static/posters/', null=True, blank=True)
+    poster = models.FileField(verbose_name='Постер', upload_to='posters/', null=True, blank=True)
     rating = models.FloatField(blank=True, null=True,verbose_name='Рейтинг')
     trailer = models.URLField(blank=True, null=True,verbose_name='Ссылка')
     podpiska = models.ForeignKey(Podpiska, on_delete=models.SET_NULL, null=True, blank=True,verbose_name='Подписка')
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return f'{self.title}/{str(self.id)}/'
