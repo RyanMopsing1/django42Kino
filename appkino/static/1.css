@@ -1,0 +1,228 @@
+button{
+border: none;
+    outline: none;
+    background: linear-gradient(300deg, darkorange, grey)!important;
+
+}
+div{
+    text-align: center;
+}
+.current{
+     background: linear-gradient(300deg, darkorange, grey)!important;
+
+    padding: 25px;
+    border-radius: 50%;
+}
+
+.title{
+	font-size: 36px;
+	text-align: center;
+    margin-top: 100px;
+    background: linear-gradient(300deg, darkorange, grey)!important;
+-webkit-background-clip: text!important;
+-webkit-text-fill-color: transparent!important;
+
+}
+.info{
+
+}
+.menu {
+    list-style: none;
+    position: absolute;
+    top: 20px;
+    right: 100px;
+}
+
+
+a {
+    display: inline-block;
+   text-decoration: none;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin: 15px 25px;
+   padding: 15px 20px;
+   font-size: 20px;
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif;
+   transition: 0.4s ease-in-out;
+   border-radius: 10px;
+   color: black;
+background-image: linear-gradient(350deg, darkorange, grey)!important;
+
+
+}
+a:hover {
+background-image: linear-gradient(350deg,  darkorange, grey)!important;
+}
+body {
+  font-family: "Times New Roman";
+}
+#content{
+    background-image: linear-gradient(350deg,  darkorange, grey)!important;
+}
+.rand{
+    background-image: linear-gradient(350deg,  darkorange, grey)!important;
+    color: black;
+    text-align: center;
+}
+#randtxt{
+    font-size: 30px;
+	text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
+
+}
+#randbt{
+    margin-top: 0px;
+}
+.info{
+     background: linear-gradient(300deg,  darkorange, grey)!important;
+    -webkit-background-clip: text!important;
+    -webkit-text-fill-color: transparent!important;
+    text-align: center;
+    font-size: 30px;
+}
+#catal{
+    margin-top: 100px;
+}
+.film{
+
+    text-align: center;
+
+
+background: linear-gradient(270deg,  darkorange, grey);
+background-size: 400% 400%;
+
+-webkit-animation: AnimationName 7s ease infinite;
+-moz-animation: AnimationName 7s ease infinite;
+-o-animation: AnimationName 7s ease infinite;
+animation: AnimationName 7s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+
+}
+
+.infotext{
+    display: inline-block;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 20px;
+    color: black;
+    font-size: 20px;
+}
+#filmrandom{
+    color: black;
+    margin-top:100px;
+    font-size: 36px;
+}
+img{
+    margin-bottom: 50px;
+}
+
+body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        .title {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        li {
+           background: linear-gradient(300deg, darkorange, black)!important;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        li img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        li a {
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        li p {
+            margin: 5px 0;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            li {
+                width: 45%;
+                margin: 10px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            li {
+                width: 90%;
+            }
+        }

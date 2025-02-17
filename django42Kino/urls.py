@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from appkino import views
 
 urlpatterns = [
@@ -24,5 +24,12 @@ urlpatterns = [
     path('kino/', views.kinoList.as_view(), name='allkino'),
     path('artist/', views.artistList.as_view(), name='allartist'),
     path('kino/<str:title>/<int:pk>/', views.kinoDetail.as_view(), name='oneKino'),
+    path('auth/', include('django.contrib.auth.urls')),
+    path('accounts/profile/', views.index),
+    path('auth/registration/', views.registration, name='reg'),
+    path('accounts/login/', views.index),
+    path('captcha/', include('captcha.urls')),
+    path('kabinet/', views.profile, name='kabinet'),
+    path('kabinet/change/', views.profileChange, name='kabinetChange'),
 
 ]

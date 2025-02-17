@@ -1,8 +1,10 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
-    <h2>Фильм {{ kino.title }}</h2>
+    <div class="film">
+    <h2 id="filmrandom" >Фильм {{ kino.title }}</h2>
     <img src="{% static kino.poster %}" alt="" width="450px">
+    <div class="infotext">
     <h3>Год выпуска {{ kino.year }}</h3>
     <h3>Страна выпуска {{ kino.country }}</h3>
     <ul>
@@ -12,4 +14,22 @@
         </li>
     {% endfor %}
     </ul>
+    </div>
+    </div>
+    <div class="film">
+    <h3>Подписка {{ kino.podpiska }}</h3>
+    <h4>Просмотр фильма:</h4>
+    {% if user.is_authenticated %}
+        {% if user.profile.podpiska.id >= kino.podpiska.id %}
+    <iframe width="720" height="480" 
+            src="{{ kino.trailer }}"
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    {% else %}
+        <a href="{% url 'kabinet' %}">Купите подписку</a>
+    {% endif %}
+    {% else %}
+        <a href="{% url 'login' %}">Авторизуйтесь для просмотрп</a>
+    {% endif %}
+    </div>
 {% endblock %}

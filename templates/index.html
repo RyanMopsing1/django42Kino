@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     {% block head %}
     <meta charset="UTF-8">
     <title>HOME</title>
+        <link rel="stylesheet" href="{% static '1.css'%}">
     {% endblock %}
 </head>
-<body>
+<body id="allbod">
     {% block menu %}
-        <nav>
+        <nav class="menu">
             <a href="{% url 'index' %}">Главная</a>
-            <a href=" {% url 'allkino'  %}">Каталог Фильмов</a>
-            <a href="{%  url 'allartist' %} ">Каталог Актеров</a>
+            <a href="{% url 'allkino'  %}">Каталог Фильмов</a>
+            <a href="{%  url 'allartist' %}">Каталог Актеров</a>
+    {% if user.is_authenticated %}
+        <a href = "{% url 'kabinet' %}">Кабинет</a>
+    <a href="">
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button id="butt" type="submit">Выход</button>
+        </form>
+    </a>
+    {% else %}
+    <a href="{% url 'login' %}">Вход</a>
+    {% endif %}
         </nav>
     {% endblock %}
-    
+
     {% block content %}
-        <h2>Привет гость</h2>
-        <h3>Сайт про кино</h3>
-        <h2>У нас на сайте {{ films.count }} фильмов</h2>
-        <h2>У нас на сайте {{ artists.count }} актеров</h2>
-        
-        <h3>Рекомендуем посмотреть
-            <a href="kino/{{ randomFilm.get_absolute_url }}">{{ randomFilm }}</a>
-        </h3>
+        {% if user.is_anonymous %}
+        <h2 class="title">Привет гость</h2>
+        {% else %}
+        <h2 class="title">Привет {{ user.username }}</h2>
+        {% endif %}
+        <h3 class="info">Сайт про кино</h3>
+        <h2 class="info">У нас на сайте {{ films.count }} фильмов</h2>
+        <h2 class="info">У нас на сайте {{ artists.count }} актеров</h2>
+    <div class="rand">
+        <h3 id="randtxt">Рекомендуем посмотреть:</h3>
+            <a href="kino/{{ randomFilm.get_absolute_url }}" id="randbt">{{ randomFilm }}</a>
+   </div>     
     {% endblock %}
 </body>
 </html>

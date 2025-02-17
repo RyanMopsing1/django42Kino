@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
+{% load static %}
 {% block content %}
-	<h2>Каталог Кино</h2>
+	<h2 class="title">Каталог Кино</h2>
     <ul>
     {% for one in kino_list %}
         <li>

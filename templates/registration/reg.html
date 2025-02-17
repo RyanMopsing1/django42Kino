@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block content %}
+<h2 class="title">Регистрация</h2>
+        <div id="form__group field">
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input class="form__field"  type="submit" value="Отправить">
+</form>
+        </div>
+{% endblock %}

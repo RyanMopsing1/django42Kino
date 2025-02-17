@@ -7,9 +7,12 @@ admin.site.register(Director)
 admin.site.register(Genre)
 admin.site.register(Country)
 
+class adminProfile(admin.ModelAdmin):
+    list_desplay= ('user','podpiska','balance')
+admin.site.register(Profile, adminProfile)
+
 class adminPodpiska(admin.ModelAdmin):
     list_display = ('title','price')
-
 admin.site.register(Podpiska, adminPodpiska)
 
 class adminKino(admin.ModelAdmin):
