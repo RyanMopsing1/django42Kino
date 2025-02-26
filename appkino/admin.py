@@ -24,3 +24,7 @@ class adminKino(admin.ModelAdmin):
     )
 
 admin.site.register(Kino, adminKino)
+
+class adminOtziv(admin.ModelAdmin):
+    list_desplay= ('user','film')
+admin.site.register(Otziv, adminOtziv)

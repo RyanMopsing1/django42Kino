@@ -31,5 +31,6 @@ urlpatterns = [
     path('captcha/', include('captcha.urls')),
     path('kabinet/', views.profile, name='kabinet'),
     path('kabinet/change/', views.profileChange, name='kabinetChange'),
+    path('otziv/<int:pk>/', views.funcOtziv, name='otziv' ),
 
 ]

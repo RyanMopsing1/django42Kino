@@ -10,22 +10,24 @@
 </head>
 <body id="allbod">
     {% block menu %}
+        <div class="menuu">
         <nav class="menu">
-            <a href="{% url 'index' %}">Главная</a>
-            <a href="{% url 'allkino'  %}">Каталог Фильмов</a>
-            <a href="{%  url 'allartist' %}">Каталог Актеров</a>
+            <a href="{% url 'index' %}" class="aaa">Главная</a>
+            <a href="{% url 'allkino'  %}" class="aaa">Каталог Фильмов</a>
+            <a href="{%  url 'allartist' %}" class="aaa">Каталог Актеров</a>
     {% if user.is_authenticated %}
-        <a href = "{% url 'kabinet' %}">Кабинет</a>
-    <a href="">
+        <a href = "{% url 'kabinet' %}"  class="aaa">Кабинет</a>
+    <a href="" class="butin">
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
-            <button id="butt" type="submit">Выход</button>
+            <button id="butt" type="submit" >Выход</button>
         </form>
     </a>
     {% else %}
-    <a href="{% url 'login' %}">Вход</a>
+    <a href="{% url 'login' %}"  class="aaa">Вход</a>
     {% endif %}
         </nav>
+        </div>
     {% endblock %}
 
     {% block content %}
@@ -39,7 +41,7 @@
         <h2 class="info">У нас на сайте {{ artists.count }} актеров</h2>
     <div class="rand">
         <h3 id="randtxt">Рекомендуем посмотреть:</h3>
-            <a href="kino/{{ randomFilm.get_absolute_url }}" id="randbt">{{ randomFilm }}</a>
+            <a href="kino/{{ randomFilm.get_absolute_url }}" id="randbt"  class="aaa">{{ randomFilm }}</a>
    </div>     
     {% endblock %}
 </body>

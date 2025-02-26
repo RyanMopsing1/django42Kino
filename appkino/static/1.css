@@ -1,14 +1,25 @@
-button{
-border: none;
-    outline: none;
-    background: linear-gradient(300deg, darkorange, grey)!important;
+.butin{
 
 }
-div{
-    text-align: center;
+
+button{
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin: 15px 25px;
+   padding: 15px 20px;
+   font-size: 20px;
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif;
+   transition: 0.4s ease-in-out;
+   border-radius: 10px;
+   color: black;
+background-image: linear-gradient(350deg, goldenrod, darkorange)!important;
+    border-color: black;
+
 }
+
 .current{
-     background: linear-gradient(300deg, darkorange, grey)!important;
+     background: linear-gradient(300deg, goldenrod, darkorange)!important;
 
     padding: 25px;
     border-radius: 50%;
@@ -17,24 +28,30 @@ div{
 .title{
 	font-size: 36px;
 	text-align: center;
-    margin-top: 100px;
-    background: linear-gradient(300deg, darkorange, grey)!important;
+    margin-top: 150px;
+    padding-top: 20px;
+    background: linear-gradient(300deg, goldenrod, darkorange)!important;
 -webkit-background-clip: text!important;
 -webkit-text-fill-color: transparent!important;
 
 }
-.info{
 
+.menuu{
+    display: inline-block;
 }
 .menu {
     list-style: none;
     position: absolute;
     top: 20px;
     right: 100px;
+     display: inline-block;
+
+}
+a{
+     display: inline-block;
 }
 
-
-a {
+.aaa {
     display: inline-block;
    text-decoration: none;
    text-transform: uppercase;
@@ -47,21 +64,21 @@ a {
    transition: 0.4s ease-in-out;
    border-radius: 10px;
    color: black;
-background-image: linear-gradient(350deg, darkorange, grey)!important;
+background-image: linear-gradient(350deg, goldenrod, darkorange)!important;
 
 
 }
 a:hover {
-background-image: linear-gradient(350deg,  darkorange, grey)!important;
+background-image: linear-gradient(350deg,  goldenrod, darkorange)!important;
 }
 body {
   font-family: "Times New Roman";
 }
 #content{
-    background-image: linear-gradient(350deg,  darkorange, grey)!important;
+    background-image: linear-gradient(350deg,  goldenrod, darkorange)!important;
 }
 .rand{
-    background-image: linear-gradient(350deg,  darkorange, grey)!important;
+    background-image: linear-gradient(350deg,  goldenrod, darkorange)!important;
     color: black;
     text-align: center;
 }
@@ -76,7 +93,7 @@ body {
     margin-top: 0px;
 }
 .info{
-     background: linear-gradient(300deg,  darkorange, grey)!important;
+     background: linear-gradient(300deg,  goldenrod, darkorange)!important;
     -webkit-background-clip: text!important;
     -webkit-text-fill-color: transparent!important;
     text-align: center;
@@ -90,7 +107,7 @@ body {
     text-align: center;
 
 
-background: linear-gradient(270deg,  darkorange, grey);
+background: linear-gradient(270deg,  goldenrod, darkorange);
 background-size: 400% 400%;
 
 -webkit-animation: AnimationName 7s ease infinite;
@@ -172,8 +189,8 @@ body {
         }
 
         li {
-           background: linear-gradient(300deg, darkorange, black)!important;
-            border-radius: 8px;
+           background: linear-gradient(270deg,  goldenrod, darkorange );
+
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin: 15px;
             padding: 15px;
@@ -226,3 +243,201 @@ body {
                 width: 90%;
             }
         }
+.poisk{
+    background-image: linear-gradient(350deg,  goldenrod, darkorange)!important;
+    color: black;
+    text-align: center;
+
+}
+
+
+
+/* Контейнер формы */
+.poisk {
+    padding-left: 500px;
+
+  background: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Форма */
+.poisk form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+/* Поля ввода */
+.poisk input[type="text"],
+.poisk input[type="search"] {
+
+  border: 1px solid black;
+  border-radius: 6px;
+  font-size: 1rem;
+  flex-grow: 1; /*  Поле ввода будет занимать все доступное пространство */
+}
+
+.poisk input[type="text"]:focus,
+.poisk input[type="search"]:focus {
+
+  outline: none;
+}
+
+/* Кнопка отправки */
+.poisk input[type="submit"] {
+  background-image: linear-gradient(350deg,  gold, orange)!important;
+  color: black;
+  padding: 5px 15px; /*  Регулируем отступы */
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+    margin:5px;
+}
+
+.poisk input[type="submit"]:hover {
+  background-image: linear-gradient(350deg,   goldenrod, darkorange)!important;
+}
+
+/* Стили для ошибок (при необходимости) */
+.poisk .errorlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #dc3545;
+  font-size: 0.9rem;
+}
+
+.poisk .errorlist li {
+  margin-bottom: 5px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .poisk form {
+    flex-direction: column; /*  Меняем направление на вертикальное на маленьких экранах */
+    align-items: stretch;  /*  Выравниваем элементы по ширине */
+  }
+
+  .poisk input[type="text"],
+  .poisk input[type="search"],
+  .poisk input[type="submit"] {
+    margin-bottom: 10px; /* Добавляем отступ между элементами */
+  }
+}
+
+/* Контейнер "Вход" */
+.vhod {
+    max-width: 500px; /* Ограничиваем ширину контейнера */
+    margin: 30px auto; /* Центрируем по горизонтали и добавляем отступ сверху/снизу */
+    padding: 30px;
+ /* Белый фон для контейнера */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Небольшая тень */
+    text-align: center; /* Центрируем элементы внутри контейнера */
+}
+
+/* Заголовок */
+.vhod .title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+
+}
+
+/* Форма */
+.vhod form {
+    display: flex; /* Flexbox для более удобного расположения элементов */
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: stretch; /* Растягиваем элементы по ширине контейнера */
+}
+
+/* Стили для div, в котором находятся поля формы */
+.vhod form div {
+    margin-bottom: 15px;
+    text-align: left; /* Выравниваем текст слева внутри каждого поля */
+}
+
+/* Лейблы */
+.vhod form label {
+    display: block; /* Лейбл занимает всю ширину */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: darkorange;
+}
+
+/* Поля ввода (текстовые, пароли и т.д.) */
+.vhod form input[type="text"],
+.vhod form input[type="password"],
+.vhod form input[type="email"] {
+    width: 100%; /* Занимает всю ширину */
+    padding: 12px;
+    border: 1px solid goldenrod;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Padding и border не увеличивают ширину */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-image: linear-gradient(350deg,   goldenrod, darkorange)!important;
+    color: black;
+}
+
+.vhod form input[type="text"]:focus,
+.vhod form input[type="password"]:focus,
+.vhod form input[type="email"]:focus {
+
+    outline: 0;
+
+}
+
+/* Ссылка "Забыл пароль" */
+.vhod form a {
+    margin-top: 30px;
+
+}
+
+
+
+/* Кнопка "OK" */
+.vhod form input[type="submit"] {
+    background-image: linear-gradient(350deg,  gold, orange)!important;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+    margin-top: 10px;
+}
+
+.vhod form input[type="submit"]:hover {
+    background-image: linear-gradient(350deg,   goldenrod, darkorange)!important;
+}
+
+/* Ссылка "Регистрация" */
+.vhod a[href="{% url 'reg' %}"] { /* Более конкретный селектор */
+    display: inline-block; /* Чтобы ширина определялась содержимым */
+    margin-top: 20px;
+    color: #28a745; /* Зеленый цвет */
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+.vhod a[href="{% url 'reg' %}"]:hover {
+    color: #1e7e34;
+    text-decoration: underline;
+}
+
+/* Стили для ошибок (если есть) */
+.vhod .errorlist {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    color: #dc3545; /* Красный цвет для ошибок */
+}
+
+.vhod .errorlist li {
+    margin-bottom: 3px;
+}

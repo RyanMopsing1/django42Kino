@@ -1,13 +1,15 @@
 {% extends 'index.html' %}
 
 {% block content %}
+    <div class="vhod">
     <h2 class="title">Вход</h2>
     <form action="" method="post">
     {% csrf_token %}
         {{ form.as_div }}
-        
-        <a href="{% url 'password_reset' %}">Забыл пароль</a>
         <input type="submit" value="OK">
+        <a href="{% url 'password_reset' %}" class="aaa">Забыл пароль</a>
+        
     </form>
-    <a href="{% url 'reg' %}">Регистрация</a>
+    <a href="{% url 'reg' %}" class="aaa">Регистрация</a>
+    </div>
 {% endblock %}

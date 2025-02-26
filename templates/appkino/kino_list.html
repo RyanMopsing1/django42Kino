@@ -2,11 +2,34 @@
 {% load static %}
 {% block content %}
 	<h2 class="title" id="catal">Каталог Кино</h2>
+    {% if myform %}
+        <div class="poisk">
+    <form action="" method="post">
+    {% csrf_token %} 
+    {{ myform }}
+        <input type="submit" value="Поиск">
+    </form>
+        </div>
+    {% endif %}
+    
+    {% if poisk %}
+    <ul>
+            {% for one in films %}
+        <li>
+            <img src="{% static one.poster %}" alt="" width="150px">
+            <a href="{{ one.get_absolute_url }}" class="aaa">
+                <p>Фильм {{ one.title }}</p>
+            </a>
+            <p>Режиссер {{ one.director }}</p>
+        </li>
+        {% endfor  %}
+    </ul>
+    {% else %}
     <ul>
     {% for one in kino_list %}
         <li>
             <img src="{% static one.poster %}" alt="" width="150px">
-            <a href="{{ one.get_absolute_url }}">
+            <a href="{{ one.get_absolute_url }}" class="aaa">
                 <p>Фильм {{ one.title }}</p>
             </a>
             <p>Режиссер {{ one.director }}</p>
@@ -28,4 +51,6 @@
 {#        {% endif %}#}
 {#    </span>#}
 {#</div>#}
+
+{% endif %}
 {% endblock %}

@@ -26,10 +26,27 @@
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     {% else %}
-        <a href="{% url 'kabinet' %}">Купите подписку</a>
+        <a href="{% url 'kabinet' %}" class="aaa">Купите подписку</a>
     {% endif %}
     {% else %}
-        <a href="{% url 'login' %}">Авторизуйтесь для просмотрп</a>
+        <a href="{% url 'login' %}" class="aaa">Авторизуйтесь для просмотра</a>
     {% endif %}
+    <h2 id="title" >Отзывы</h2>
+    <a href="{% url 'login' %}" class="aaa">Авторизуйтесь что бы написать отзыв</a>
+    {% if user.is_authenticated %}
+        <form action="{% url 'otziv' kino.id %}" method="post">
+            {% csrf_token %}
+            {{ kino.getFormotziv }}
+            <input type="submit" value="Отправить">
+        </form>
+    {% endif %}
+    {% for one in kino.getOtziv %}
+    <div>
+         
+        <h4>{{ one.user }}</h4>
+        <p>{{ one.text }}</p>
     </div>
+    {% endfor %}
+    </div>
+    
 {% endblock %}
